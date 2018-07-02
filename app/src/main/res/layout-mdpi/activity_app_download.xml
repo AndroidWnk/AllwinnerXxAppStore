@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/title_background"
+        layout="@layout/view_top_state" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1_downloadmanager"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/download_point1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/page_indicator_focused"
+
+            />
+
+        <ImageView
+            android:id="@+id/download_point2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5px"
+            android:layout_toRightOf="@+id/download_point1"
+            android:background="@drawable/page_indicator_unfocused" />
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/download_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+    </android.support.v4.view.ViewPager>
+</LinearLayout>

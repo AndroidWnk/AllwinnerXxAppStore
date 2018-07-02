@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">εφαρμογή.</string>
+    <string name="title_download">Λήψη εργασίας</string>
+    <string name="title_download_hostory">κατέβασε την ιστορία</string>
+
+    <!-- 通用版下拉刷新上拉加载控件 -->
+    <string name="pull_to_refresh">- Ανανέωση</string>
+    <string name="release_to_refresh">απελευθέρωση να φρεσκάρω αμέσως</string>
+    <string name="refreshing">αναζωογονητικό...</string>
+    <string name="refresh_succeed">φρεσκάρω την επιτυχία</string>
+    <string name="refresh_fail">Δεν απέτυχε</string>
+    <string name="pullup_to_load">τράβα φορτίου</string>
+    <string name="release_to_load">απελευθέρωση αμέσως φορτίο</string>
+    <string name="loading">Φόρτωση...</string>
+    <string name="load_succeed">Είναι γεμάτο με επιτυχία</string>
+    <string name="load_fail">Φόρτωση αποτυχία</string>
+    <string name="load_no_more_datas">Χωρίς περισσότερα δεδομένα</string>
+
+    <string name="text_Uninstalled">Κατάργηση εγκατάστασης</string>
+    <string name="text_Installed">Κατάργηση εγκατάστασης</string>
+    <string name="text_Install">Εγκατάσταση</string>
+    <string name="text_Installing">Εγκατάσταση</string>
+    <string name="text_Donwloading">κατεβάζει.</string>
+    <string name="text_Update">Ενημέρωση</string>
+    <string name="text_Installation_completed">Εγκαταστήθηκε με επιτυχία</string>
+    <string name="text_Installation_failed">εγκατάσταση αποτύχει, σε παρακαλώ, προσπάθησε ξανά</string>
+    <string name="string_tips_no_network">Δίκτυο ανωμαλία, έλεγξε το δίκτυο</string>
+    <string name="string_tips_no_traffic">Σας 3G ροή πέρα από τον περιορισμό της ροής</string>
+
+    <string name="text_Server_Busy">Ο σέρβερ είναι απασχολημένος, προσπαθήστε αργότερα.</string>
+    <string name="text_enter_keyword">Σε παρακαλώ, λέξη - κλειδί,</string>
+    <string name="text_no_data">δεν έψαξε για τα αποτελέσματα！</string>
+
+    <string name="text_no_task">Δεν κατεβάζω τα καθήκοντα</string>
+    <string name="text_no_history">Δεν κατεβάζω τα αρχεία</string>
+
+    <string name="status_pause">έχει ανασταλεί</string>
+    <string name="status_waiting">περιμένει</string>
+    <string name="status_download_failure">κατέβασε την αποτυχία</string>
+
+    <string name="string_note">άμεση</string>
+    <string name="string_confirm">Επιβεβαιώνω</string>
+    <string name="string_cancel">Ματαίωση</string>
+    <string name="string_delete">Αν αφαιρέσουμε το κατέβασμα καθήκοντα？</string>
+    <string name="string_empty">είναι άδειο.</string>
+
+    <string name="string_downloads">κατέβασμα</string>
+    <string name="string_thousand_download">εκατ.</string>
+    <string name="string_Application_introduction">Εισαγωγή εφαρμογής</string>
+    <string name="string_expand">Ανοιξε</string>
+    <string name="string_collapse">Μαζεύω</string>
+
+</resources>

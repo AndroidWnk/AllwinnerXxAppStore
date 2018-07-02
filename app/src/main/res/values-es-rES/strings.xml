@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">Tienda de App</string>
+    <string name="title_download">Tarea de descarga</string>
+    <string name="title_download_hostory">Descarga de la historia</string>
+
+    <!-- 通用版下拉刷新上拉加载控件 -->
+    <string name="pull_to_refresh">Desplegable Actualizar</string>
+    <string name="release_to_refresh">La liberación de refrescar inmediatamente</string>
+    <string name="refreshing">Actualizando lista...</string>
+    <string name="refresh_succeed">El éxito de refresco</string>
+    <string name="refresh_fail">Actualización fallida</string>
+    <string name="pullup_to_load">Para cargar más de</string>
+    <string name="release_to_load">La liberación de carga inmediata</string>
+    <string name="loading">Actualmente la carga...</string>
+    <string name="load_succeed">El éxito de la carga</string>
+    <string name="load_fail">Carga de fracaso</string>
+    <string name="load_no_more_datas">No hay más datos</string>
+
+    <string name="text_Uninstalled">No instalado</string>
+    <string name="text_Installed">Desinstalado</string>
+    <string name="text_Install">Instalación</string>
+    <string name="text_Installing">En la instalación</string>
+    <string name="text_Donwloading">Descargando</string>
+    <string name="text_Update">La actualización</string>
+    <string name="text_Installation_completed">Instalación exitosa</string>
+    <string name="text_Installation_failed">Instalación fallada</string>
+    <string name="string_tips_no_network">Anomalías de la red, compruebe la red</string>
+    <string name="string_tips_no_traffic">Su caudal ha excedido el límite de tráfico 3G</string>
+
+    <string name="text_Server_Busy">El servidor está ocupado, por favor inténtelo de nuevo</string>
+    <string name="text_enter_keyword">Por favor introduzca la clave</string>
+    <string name="text_no_data">El resultado no buscado en！</string>
+
+    <string name="text_no_task">Las tareas de descarga libre</string>
+    <string name="text_no_history">Sin descargar los registros de</string>
+
+    <string name="status_pause">Se han suspendido</string>
+    <string name="status_waiting">Está a la espera de</string>
+    <string name="status_download_failure">escarga fallada</string>
+
+    <string name="string_note">Consejos</string>
+    <string name="string_confirm">Confirmar</string>
+    <string name="string_cancel">Cancelar</string>
+    <string name="string_delete">Desea eliminar la descarga de tareas？</string>
+    <string name="string_empty">Vacía</string>
+
+    <string name="string_downloads">Vez Descargar</string>
+    <string name="string_thousand_download">Millones de veces Descargar</string>
+    <string name="string_Application_introduction">Introducción de aplicación</string>
+    <string name="string_expand">Desplegar</string>
+    <string name="string_collapse">Contraer</string>
+
+</resources>

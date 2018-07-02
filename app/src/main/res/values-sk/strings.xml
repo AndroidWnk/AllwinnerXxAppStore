@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">Obchod s aplikáciami</string>
+    <string name="title_download">Fronta k stiahnutiu</string>
+    <string name="title_download_hostory">História preberania</string>
+
+    <!-- 通用版下拉刷新上拉加载控件 -->
+    <string name="pull_to_refresh">Rozbaľovací zoznam obnoviť</string>
+    <string name="release_to_refresh">Vydanie okamžité obnovenie</string>
+    <string name="refreshing">Osviežujúci...</string>
+    <string name="refresh_succeed">Obnovenie bolo úspešné</string>
+    <string name="refresh_fail">Obnovenie zlyhalo</string>
+    <string name="pullup_to_load">Ťahať náklad viac</string>
+    <string name="release_to_load">Vydanie okamžité zaťaženie</string>
+    <string name="loading">Načítanie...</string>
+    <string name="load_succeed">Zaťaženie sa podarilo</string>
+    <string name="load_fail">Načítanie zlyhalo</string>
+    <string name="load_no_more_datas">Žiadne údaje</string>
+    
+    <string name="text_Uninstalled">Odinštalované</string>
+    <string name="text_Installed">Odinštalované</string>
+    <string name="text_Install">Inštalácia</string>
+    <string name="text_Installing">V inštalácii</string>
+    <string name="text_Donwloading">Sťahujem</string>
+    <string name="text_Update">Aktualizácia</string>
+    <string name="text_Installation_completed">Úspešne nainštalované</string>
+    <string name="text_Installation_failed">Inštalácia zlyhala, skúste to prosím znova</string>
+    <string name="string_tips_no_network">Sieť výnimky, skontrolujte, či vaša sieť</string>
+    <string name="string_tips_no_traffic">3G prevádzku prekročila dopravné obmedzenia</string>
+
+    <string name="text_Server_Busy">Server je zaneprázdnený, skúste to prosím neskôr</string>
+    <string name="text_enter_keyword">Zadajte kľúčové slovo</string>
+    <string name="text_no_data">Nenašli sa žiadne výsledky!</string>
+
+    <string name="text_no_task">Žiadne stiahnutie úloha</string>
+    <string name="text_no_history">Žiadny záznam na stiahnutie</string>
+
+    <string name="status_pause">Pozastavená</string>
+    <string name="status_waiting">Čaká</string>
+    <string name="status_download_failure">Sťahovanie zlyhalo</string>
+
+    <string name="string_note">Výzva</string>
+    <string name="string_confirm">Potvrdiť</string>
+    <string name="string_cancel">Zrušiť</string>
+    <string name="string_delete">Chcete odstrániť úlohu na stiahnutie?</string>
+    <string name="string_empty">Prázdne</string>
+
+    <string name="string_downloads">Na stiahnutie</string>
+    <string name="string_thousand_download">Miliónov stiahnutí</string>
+    <string name="string_Application_introduction">Uvedenie aplikácie</string>
+    <string name="string_expand">Otvoriť</string>
+    <string name="string_collapse">Zbaliť</string>
+
+</resources>

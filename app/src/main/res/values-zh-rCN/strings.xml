@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">应用商店</string>
+    <string name="title_download">下载任务</string>
+    <string name="title_download_hostory">下载历史</string>
+
+    <!-- 通用版下拉刷新上拉加载控件 -->
+    <string name="pull_to_refresh">下拉刷新</string>
+    <string name="release_to_refresh">释放立即刷新</string>
+    <string name="refreshing">正在刷新...</string>
+    <string name="refresh_succeed">刷新成功</string>
+    <string name="refresh_fail">刷新失败</string>
+    <string name="pullup_to_load">上拉加载更多</string>
+    <string name="release_to_load">释放立即加载</string>
+    <string name="loading">正在加载...</string>
+    <string name="load_succeed">加载成功</string>
+    <string name="load_fail">加载失败</string>
+    <string name="load_no_more_datas">无更多数据</string>
+    
+    <string name="text_Uninstalled">未安装</string>
+    <string name="text_Installed">卸载</string>
+    <string name="text_Install">安装</string>
+    <string name="text_Installing">安装中</string>
+    <string name="text_Donwloading">下载中</string>
+    <string name="text_Update">更新</string>
+    <string name="text_Installation_completed">安装成功</string>
+    <string name="text_Installation_failed">安装失败，请重试</string>
+    <string name="string_tips_no_network">网络异常，请检查网络</string>
+    <string name="string_tips_no_traffic">您的3G流量已超出流量限制</string>
+
+    <string name="text_Server_Busy">服务器繁忙，请稍候再试</string>
+    <string name="text_enter_keyword">请输入关键字</string>
+    <string name="text_no_data">未搜索到结果！</string>
+
+    <string name="text_no_task">无下载任务</string>
+    <string name="text_no_history">无下载记录</string>
+
+    <string name="status_pause">已暂停</string>
+    <string name="status_waiting">正在等待</string>
+    <string name="status_download_failure">下载失败</string>
+
+    <string name="string_note">提示</string>
+    <string name="string_confirm">确定</string>
+    <string name="string_cancel">取消</string>
+    <string name="string_delete">是否删除该下载任务？</string>
+    <string name="string_empty">空空如也</string>
+
+    <string name="string_downloads">次下载</string>
+    <string name="string_thousand_download">万次下载</string>
+    <string name="string_Application_introduction">应用介绍</string>
+    <string name="string_expand">展开</string>
+    <string name="string_collapse">收起</string>
+
+</resources>

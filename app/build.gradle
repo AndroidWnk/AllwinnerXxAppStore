@@ -1,0 +1,48 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "25.0.0"
+
+    signingConfigs {
+		 config {
+            keyAlias 'platform'
+            keyPassword '123456'
+            storeFile file('../key/t3_as.keystore')
+            storePassword '123456'
+        }
+    }
+    defaultConfig {
+//        applicationId "com.e_trans.xxappstore"
+        applicationId "com.hero.caritmarketapp"
+        minSdkVersion 19
+        targetSdkVersion 19
+        versionCode 1
+        versionName "v2.1.12.80629"
+    }
+    buildTypes {
+        release {
+		    signingConfig signingConfigs.config
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.config
+        }
+    }
+    productFlavors {
+    }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.jakewharton:butterknife:7.0.0'
+    compile project(':xxdownloadaidl')
+    compile(name: 'EtSdk-1.1.0.000', ext: 'aar')
+}

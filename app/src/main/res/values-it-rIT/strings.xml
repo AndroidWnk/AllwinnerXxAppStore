@@ -1,0 +1,57 @@
+﻿<resources>
+
+    <string name="app_name">App store</string>
+    <string name="title_download">Scaricare</string>
+    <string name="title_download_hostory">Scarica cronologia</string>
+
+    <!-- 通用版下拉刷新上拉加载控件 -->
+    <string name="pull_to_refresh">Aggiornamento a discesa</string>
+    <string name="release_to_refresh">Aggiorna dopo il rilascio</string>
+    <string name="refreshing">Rinfrescante...</string>
+    <string name="refresh_succeed">Aggiornamento riuscito</string>
+    <string name="refresh_fail">Aggiornamento non riuscito</string>
+    <string name="pullup_to_load">Tirare su il carico più</string>
+    <string name="release_to_load">Carico dopo il rilascio</string>
+    <string name="loading">Caricamento...</string>
+    <string name="load_succeed">Caricamento riuscito</string>
+    <string name="load_fail">Caricamento non riuscito</string>
+    <string name="load_no_more_datas">Non più dati</string>
+
+
+
+    <string name="text_Uninstalled">Non installato ancora</string>
+    <string name="text_Installed">Disinstallato</string>
+    <string name="text_Install">Sta installando</string>
+    <string name="text_Installing">Installazione</string>
+    <string name="text_Donwloading">Sta scaricando</string>
+    <string name="text_Update">Aggiornamento</string>
+    <string name="text_Installation_completed">App installato con successo </string>
+    <string name="text_Installation_failed">Installazione dell\'applicazione non riuscita. Si prega di riprovare</string>
+    <string name="string_tips_no_network">Attualmente non esiste una rete</string>
+    <string name="string_tips_no_traffic">Il traffico è stato superato in modo che la funzione non è disponibile</string>
+
+    <string name="text_Server_Busy">Server è occupato ora. Per favore riprova!</string>
+    <string name="text_enter_keyword">Inserisci parole chiave</string>
+    <string name="text_no_data">Nessun risultato è stato cercato！</string>
+
+    <string name="text_no_task">Nessuna operazione</string>
+    <string name="text_no_history">Nessuna storia</string>
+
+    <string name="status_pause">Pausa</string>
+    <string name="status_waiting">Waitng</string>
+    <string name="status_download_failure">Fallimento</string>
+
+    <string name="string_note">Nota</string>
+    <string name="string_confirm">Confermare</string>
+    <string name="string_cancel">Annullare</string>
+    <string name="string_delete">Sei sicuro di cancellare？</string>
+    <string name="string_empty">Vuoto</string>
+
+    <string name="string_downloads">downloads</string>
+    <string name="string_thousand_download">milione downloads</string>
+    <string name="string_Application_introduction">Introduzione dell\'app</string>
+    <string name="string_expand">Aprire</string>
+    <string name="string_collapse">Restringersi</string>
+
+
+</resources>

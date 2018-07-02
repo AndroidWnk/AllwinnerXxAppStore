@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/btn_back" />
+
+        <com.e_trans.xxappstore.view.ClearEditText
+            android:id="@+id/index_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="100dp"
+            android:layout_toRightOf="@id/back"
+            android:background="@drawable/shape_index_search_bg"
+            android:drawableLeft="@drawable/search_logo"
+            android:gravity="center_vertical"
+            android:hint="请输入关键字"
+            android:imeOptions="actionSearch"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="25sp"></com.e_trans.xxappstore.view.ClearEditText>
+
+    </RelativeLayout>
+
+    <com.e_trans.xxappstore.view.pullableview.PullToRefreshLayout
+        android:id="@+id/app_refresh_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="7dp">
+
+        <include layout="@layout/refresh_head" />
+        <!-- 支持所有实现Pullable接口的View -->
+
+        <com.e_trans.xxappstore.view.pullableview.PullableListView
+            android:id="@+id/app_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:dividerHeight="1dp">
+
+        </com.e_trans.xxappstore.view.pullableview.PullableListView>
+
+        <include layout="@layout/load_more" />
+    </com.e_trans.xxappstore.view.pullableview.PullToRefreshLayout>
+</LinearLayout>

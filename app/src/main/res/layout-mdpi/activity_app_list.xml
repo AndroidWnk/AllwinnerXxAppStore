@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+    <!--android:background="@drawable/top_bor"-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="20dp">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bt_back_style"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/titleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="应用商店"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bt_search_style" />
+
+        <ImageView
+            android:id="@+id/download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/search"
+            android:background="@drawable/bt_loading_style" />
+    </RelativeLayout>
+
+    <com.e_trans.xxappstore.view.pullableview.PullToRefreshLayout
+        android:id="@+id/app_refresh_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="7dp">
+
+        <include layout="@layout/refresh_head" />
+        <!-- 支持所有实现Pullable接口的View -->
+
+        <com.e_trans.xxappstore.view.pullableview.PullableGridView
+            android:id="@+id/gv_app"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnWidth="90dp"
+            android:horizontalSpacing="2dp"
+            android:listSelector="@android:color/transparent"
+            android:numColumns="2"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="2dp">
+
+        </com.e_trans.xxappstore.view.pullableview.PullableGridView>
+
+        <include layout="@layout/load_more" />
+    </com.e_trans.xxappstore.view.pullableview.PullToRefreshLayout>
+</LinearLayout>

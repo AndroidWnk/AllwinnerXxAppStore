@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="loading_bg_color">#99101010</color>
+    <color name="white">#FFFFFF</color>
+    <color name="line_color">#122103</color>
+    <color name="picture_back">#80000000</color>
+    <!-- 通用版下拉刷新上拉加载控件 -->
+    <color name="light_blue">#6593cb</color>
+    <color name="black">#333333</color>
+    <color name="text_color">#aaaaaa</color>
+    <color name="item_bg_color">#1AFFFFFF</color>
+</resources>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:more="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/title_background"
+        layout="@layout/view_top_state" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp">
+
+                <ImageView
+                    android:id="@+id/app_icon"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/ic_list_img_loading" />
+
+                <TextView
+                    android:id="@+id/app_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/app_icon"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/app_icon"
+                    android:text="GPS信息"
+                    android:textColor="@color/white"
+                    android:textSize="28sp" />
+
+
+                <RatingBar
+                    android:id="@+id/app_stars"
+                    style="@style/MyRatingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/app_icon"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/app_icon"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:progressDrawable="@drawable/layer_list_rating_big"
+                    android:rating="0" />
+
+                <TextView
+                    android:id="@+id/app_download_counts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/app_stars"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/app_stars"
+                    android:text="512次"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/app_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/app_download_counts"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/app_download_counts"
+                    android:text="51MB"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/app_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@id/app_icon"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/app_item_btn_bg"
+                    android:gravity="center"
+                    android:minEms="4"
+                    android:text="安装"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/app_update"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/app_icon"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_toLeftOf="@id/app_state"
+                    android:background="@drawable/app_item_btn_bg"
+                    android:gravity="center"
+                    android:minEms="4"
+                    android:text="更新"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/divider_list" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text="应用介绍"
+                android:textColor="@color/white"
+                android:textSize="28sp" />
+
+            <com.e_trans.xxappstore.view.MoreTextView
+                android:id="@+id/app_introduce"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                more:textColor="@color/white"
+                more:textSize="20sp">
+
+            </com.e_trans.xxappstore.view.MoreTextView>
+
+            <com.e_trans.xxappstore.view.CustomGridView
+                android:id="@+id/gv_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnWidth="204dp"
+                android:horizontalSpacing="1dp"
+                android:numColumns="5"
+                android:verticalSpacing="1dp"></com.e_trans.xxappstore.view.CustomGridView>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

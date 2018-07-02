@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="30dp">
+    <TextView
+        android:id="@+id/app_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/app_icon"
+        android:background="@drawable/app_item_btn_bg"
+        android:gravity="center"
+        android:minEms="4"
+        android:text="安装"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/app_icon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerVertical="true"
+        android:background="@drawable/ic_list_img_loading" />
+
+    <TextView
+        android:id="@+id/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/app_icon"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@id/app_state"
+        android:layout_toRightOf="@id/app_icon"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="28sp" />
+
+    <TextView
+        android:id="@+id/app_download_counts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/app_name"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@id/app_icon"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/app_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/app_download_counts"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@id/app_download_counts"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <RatingBar
+        android:id="@+id/app_stars"
+        style="@style/MyRatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/app_download_counts"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@id/app_icon"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:progressDrawable="@drawable/layer_list_rating_big"
+        android:rating="0" />
+
+    </RelativeLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/divider_list"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="170dp"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/divider_list_ver"/>
+</RelativeLayout>

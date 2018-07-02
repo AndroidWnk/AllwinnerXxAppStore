@@ -1,0 +1,47 @@
+﻿<resources>
+    <string name="app_name">앱 스토어</string>
+    <string name="title_download">다운로드 작업</string>
+    <string name="title_download_hostory">Download history</string>
+
+    <!-- 通用版下拉刷新上拉加载控件 -->
+    <string name="pull_to_refresh">드롭다운 새로 고침</string>
+    <string name="release_to_refresh">느슨한 후 새로 고침</string>
+    <string name="refreshing">지금 새로 고침...</string>
+    <string name="refresh_succeed">새로 고침 성공</string>
+    <string name="refresh_fail">새로 고침 실패</string>
+    <string name="pullup_to_load">느슨한 후 불러오기</string>
+    <string name="release_to_load">위에 많은 끌고 불러오기</string>
+    <string name="loading">로드...</string>
+    <string name="load_succeed">성공적으로 불러왔습니다</string>
+    <string name="load_fail">불러오기 실패</string>
+    <string name="load_no_more_datas">더 많은 정보 없다</string>
+    <string name="text_Uninstalled">제거됨</string>
+    <string name="text_Installed">설치됨</string>
+    <string name="text_Install">설치</string>
+    <string name="text_Installing">설치</string>
+    <string name="text_Donwloading">다운로드</string>
+    <string name="text_Update">업데이트 </string>
+    <string name="text_Installation_completed">신청 완료</string>
+    <string name="text_Installation_failed">프로그램 설치 실패.다시 한번 해봅시다. </string>
+    <string name="string_tips_no_network">현재 네트워크가 없습니다.</string>
+    <string name="string_tips_no_traffic">트래픽이 초과되어 기능을 사용할 수 없습니다.</string>
+    <string name="text_Server_Busy">서버 바빠. 다시 시도해 주십시오!</string>
+    <string name="text_enter_keyword">키워드를 입력하십시오</string>
+    <string name="text_no_data">데이터가 없습니다！</string>
+    <string name="text_no_task">임무를 없다</string>
+    <string name="text_no_history">기록 없음</string>
+
+    <string name="status_pause">잠시</string>
+    <string name="status_waiting">잠깐만</string>
+    <string name="status_download_failure">실패</string>
+    <string name="string_note">주의</string>
+    <string name="string_confirm">확인</string>
+    <string name="string_cancel">취소</string>
+    <string name="string_delete">삭제 하시겠습니까？</string>
+    <string name="string_empty">빈</string>
+    <string name="string_downloads">다운로드</string>
+    <string name="string_thousand_download">万次下载</string>
+    <string name="string_Application_introduction">신청서 소개</string>
+    <string name="string_expand">열기</string>
+    <string name="string_collapse">축소</string>
+</resources>

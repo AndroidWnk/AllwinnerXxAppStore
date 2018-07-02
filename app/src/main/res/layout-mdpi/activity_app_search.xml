@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+<!--android:background="@drawable/top_bor"-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bt_back_style"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/search_edit_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_search_input" />
+
+        <com.e_trans.xxappstore.view.ClearEditText
+            android:id="@+id/index_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_alignLeft="@+id/search_edit_back"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
+            android:drawableLeft="@drawable/search_logo"
+            android:hint="@string/text_enter_keyword"
+            android:imeOptions="actionSearch"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="18sp">
+
+        </com.e_trans.xxappstore.view.ClearEditText>
+
+    </RelativeLayout>
+
+    <com.e_trans.xxappstore.view.pullableview.PullToRefreshLayout
+        android:id="@+id/app_refresh_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="7dp">
+
+        <include layout="@layout/refresh_head" />
+        <!-- 支持所有实现Pullable接口的View -->
+
+        <com.e_trans.xxappstore.view.pullableview.PullableListView
+            android:id="@+id/app_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:dividerHeight="1dp">
+
+        </com.e_trans.xxappstore.view.pullableview.PullableListView>
+
+        <include layout="@layout/load_more" />
+    </com.e_trans.xxappstore.view.pullableview.PullToRefreshLayout>
+</LinearLayout>

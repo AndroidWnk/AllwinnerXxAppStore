@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">App store</string>
+    <string name="title_download">Download task</string>
+    <string name="title_download_hostory">Download history</string>
+
+    <!-- 通用版下拉刷新上拉加载控件 -->
+    <string name="pull_to_refresh">Pull to Refresh</string>
+    <string name="release_to_refresh">Refresh after release</string>
+    <string name="refreshing">Refreshing...</string>
+    <string name="refresh_succeed">Refresh successfully</string>
+    <string name="refresh_fail">Refresh failure</string>
+    <string name="pullup_to_load">Pull up to load more</string>
+    <string name="release_to_load">Load after release</string>
+    <string name="loading">Loading...</string>
+    <string name="load_succeed">Load successfully</string>
+    <string name="load_fail">Load failure</string>
+    <string name="load_no_more_datas">No more data</string>
+    <string name="text_Uninstalled">Uninstalled</string>
+    <string name="text_Installed">Installed</string>
+    <string name="text_Install">Install</string>
+    <string name="text_Installing">Installing</string>
+    <string name="text_Donwloading">Donwloading</string>
+    <string name="text_Update">Update</string>
+    <string name="text_Installation_completed">Application installation completed</string>
+    <string name="text_Installation_failed">Application install failed. Please try again!</string>
+    <string name="string_tips_no_network">There is currently no network</string>
+    <string name="string_tips_no_traffic">Your traffic has been exceeded so the function is not available</string>
+    <string name="text_Server_Busy">Server is busy now.Please try again!</string>
+    <string name="text_enter_keyword">Enter keywords</string>
+    <string name="text_no_data">No data！</string>
+    <string name="text_no_task">No task</string>
+    <string name="text_no_history">No history</string>
+
+    <string name="status_pause">Pause</string>
+    <string name="status_waiting">Waiting</string>
+    <string name="status_download_failure">Failure</string>
+    <string name="string_note">Note</string>
+    <string name="string_confirm">Confirm</string>
+    <string name="string_cancel">Cancel</string>
+    <string name="string_delete">Sure to delete？</string>
+    <string name="string_empty">Empty</string>
+    <string name="string_downloads">downloads</string>
+    <string name="string_thousand_download">万次下载</string>
+    <string name="string_Application_introduction">Application introduction</string>
+    <string name="string_expand">Open</string>
+    <string name="string_collapse">Shrink</string>
+</resources>

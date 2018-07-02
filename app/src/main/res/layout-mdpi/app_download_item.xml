@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="30dp">
+
+    <ImageView
+        android:id="@+id/app_icon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerVertical="true"
+        android:background="@drawable/ic_list_img_loading" />
+
+    <ImageView
+        android:id="@+id/delete_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/downdelete" />
+
+    <ImageView
+        android:id="@+id/download_control"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@id/delete_task" />
+
+    <TextView
+        android:id="@+id/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/app_icon"
+        android:layout_marginLeft="40dp"
+        android:layout_toRightOf="@id/app_icon"
+        android:text="App"
+        android:textColor="@color/white"
+        android:textSize="28sp" />
+
+    <ProgressBar
+        android:id="@+id/download_progressbar"
+        style="@style/ProgressBar_Mini"
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:layout_below="@id/app_name"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="40dp"
+        android:layout_toLeftOf="@id/download_control"
+        android:layout_toRightOf="@id/app_icon" />
+
+    <TextView
+        android:id="@+id/progress_percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/app_icon"
+        android:layout_marginLeft="40dp"
+        android:layout_toRightOf="@id/app_icon"
+        android:text="0%"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/app_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/app_icon"
+        android:layout_marginLeft="40dp"
+        android:layout_toRightOf="@id/app_icon"
+        android:text="正在等待"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/file_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/app_icon"
+        android:layout_marginRight="40dp"
+        android:layout_toLeftOf="@id/download_control"
+        android:text="0MB"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+</RelativeLayout>

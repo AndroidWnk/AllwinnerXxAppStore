@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="false"
+    android:visibility="gone">
+
+    <RelativeLayout
+        android:id="@+id/notification_window"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:background="@drawable/top_bor">
+
+        <TextView
+            android:id="@+id/notification_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="12:23"
+            android:textColor="#ffffff"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/notification_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="06月16日 星期日"
+            android:textColor="#ffffff"
+            android:textSize="24sp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/notification_mobile_signal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/notification_time"
+            android:background="@drawable/icon_mobile_signal_0" />
+
+        <ImageView
+            android:id="@+id/notification_mobile_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/notification_mobile_signal"
+            android:layout_alignTop="@id/notification_mobile_signal"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/icon_mobile_type_2g"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/notification_bluetooth_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/notification_mobile_signal"
+            android:background="@drawable/icon_bluetooth_off" />
+
+        <ImageView
+            android:id="@+id/notification_gps_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/notification_bluetooth_state"
+            android:background="@drawable/icon_gps_invalid"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/notification_wifi_signal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/notification_gps_state"
+            android:background="@drawable/icon_wifi_signal_0"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/notification_sound_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/notification_wifi_signal"
+            android:background="@drawable/icon_sound_on" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="标题"
+            android:textColor="@color/white"
+            android:textSize="32sp" />
+
+        <Button
+            android:id="@+id/go_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bt_back_style" />
+
+    </RelativeLayout>
+</RelativeLayout>
