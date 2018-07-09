@@ -30,6 +30,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import cn.com.etrans.etsdk.config.EtSDK;
 import cn.com.etrans.etsdk.utils.HardVersionInfoManager;
 
 /**
@@ -42,7 +43,7 @@ public class XxCustomApplication extends Application {
     public List<AppListEntity.AppInfo> historyList = new ArrayList<AppListEntity.AppInfo>();//下载历史
     public Map<String, DownLoader> downLoaders = new ConcurrentHashMap<String, DownLoader>();//下载器的Map KEY是fileId(保证线程安全)
     public List<String> waitList = new ArrayList<String>();//等待下载的任务的列表，存的是fileid
-    public Map<Integer,Integer> installingAppMap = new ConcurrentHashMap<Integer, Integer>();
+    public Map<Integer, Integer> installingAppMap = new ConcurrentHashMap<Integer, Integer>();
     public boolean isBeyond = false;
     public boolean isDoRecoverNet = true;
 
@@ -57,9 +58,9 @@ public class XxCustomApplication extends Application {
         registerBoradcastReceiver();
 
         //这些参数要放在开机自启的service里面，防止被杀掉在这也拿一次
-        Constant.deviceId = HardVersionInfoManager.GetHardSeralNum().replaceAll("\n", "");
-        Constant.sysVersion = SystemProperties.get("ro.build.version");//.substring(SystemProperties.get("ro.build.version").indexOf("RV"));
-        Constant.sysModel = SystemProperties.get("ro.product.model").replaceAll(" ","");
+        Constant.deviceId = HardVersionInfoManager.GetHardSeralNum().replaceAll("\n", "");//2111010030313647373000da5e4fd75369
+        Constant.sysVersion = SystemProperties.get("ro.build.version");//.substring(SystemProperties.get("ro.build.version").indexOf("RV"));//YC-ZD2S-HAV100-20180619-RV1.0.0update
+        Constant.sysModel = SystemProperties.get("ro.product.model").replaceAll(" ", "");//t3
 //        Constant.sysVersion = "V174";//先写死一个测试用
 //        Constant.sysModel = "YC-DD2000-V7";
         Constant.sdPath = Environment.getExternalStorageDirectory().getPath();
@@ -86,14 +87,43 @@ public class XxCustomApplication extends Application {
 //                    Constant.vin = CANManager.get(XxCustomApplication.this).getVehicleVINNumValue();//++android.jar增加部分
 //                }
 //            }.start();
-            Constant.vin = "LJU70W1Z7FG075386";//先写死一个测试用
-            Constant.deviceId = "2115010041574d4233520175bb4c408287";
-            Constant.supplierCode = "1440049";
-            Constant.sysVersion = "YC-ZD2S-HV100-20180320-RV2.0.95";
+            //test1*******************************************************8
+//            Constant.vin = "LJU70W1Z7FG075386";//先写死一个测试用
+//            Constant.deviceId = "2115010041574d4233520175bb4c408287";
+//            Constant.supplierCode = "1440049";
+//            Constant.sysVersion = "YC-ZD2S-HV100-20180320-RV2.0.95";
+//            Constant.sysModel = "YC-DD2000-V7";
+//            UrlManager.HOST = "http://vis.evcar.com:5151/v1/";
+//            UrlManager.DOWNLOADHOST = "http://vis.evcar.com:5151/v1/";
+            //test1*******************************************************8
+            //test2,用新设备，*********************************************************
+            //{"state":0,"err":{"errCode":"100","errMsg":"sysModel不合法"}}
+
+
+            try {
+                Constant.vin = EtSDK.getInstance(this).getCanManager().getVehicleVINNumValue();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            if(Constant.vin == ""){
+                Constant.vin = "LJU70W1Z7FG075386";//先写死一个测试用
+            }
+//            Constant.deviceId = "2111010030313647373000da5e4fd75369";
+//            Constant.supplierCode = "1440049";
+//            Constant.sysVersion = "YC-ZD2S-HAV100-20180619-RV1.0.0update";
+//            Constant.sysModel = "t3";//"sysModel不合法"
             Constant.sysModel = "YC-DD2000-V7";
             UrlManager.HOST = "http://vis.evcar.com:5151/v1/";
             UrlManager.DOWNLOADHOST = "http://vis.evcar.com:5151/v1/";
 
+            //test2,用新设备，*********************************************************
+
+
+            //新版
+//            Constant.vin = EtSDK.getInstance(this).getCanManager().getVehicleVINNumValue();
+//            UrlManager.HOST = "http://vis.evcar.com:5151/v1/";
+//            UrlManager.DOWNLOADHOST = "http://vis.evcar.com:5151/v1/";
 
 
             //旧版
@@ -101,7 +131,7 @@ public class XxCustomApplication extends Application {
 //            UrlManager.HOST = "http://vis.evcar.com:5151/v1/";
 //            UrlManager.DOWNLOADHOST = "http://vis.evcar.com:5151/v1/";
         }
-        XxConfig.getInstance().init(this,"EtransUpgrade");
+        XxConfig.getInstance().init(this, "EtransUpgrade");
         XxSetting.getInstance().init(this);
         XxNetManager.getInstance().init(this);
         XxNotificationManager.getInstance().init(this);
@@ -112,6 +142,7 @@ public class XxCustomApplication extends Application {
     public static RequestQueue getHttpQueues() {
         return mRequestQueues;
     }
+
     public void registerBoradcastReceiver() {
         IntentFilter myIntentFilter = new IntentFilter();
         myIntentFilter.addAction("installingApp");
@@ -128,15 +159,15 @@ public class XxCustomApplication extends Application {
             // TODO Auto-generated method stub
             String action = intent.getAction();
             int fileId = intent.getIntExtra("fileId", -1);
-            if(installingAppMap != null){
+            if (installingAppMap != null) {
                 if (action.equals("installingApp")) {
-                    installingAppMap.put(fileId,2);
+                    installingAppMap.put(fileId, 2);
                 } else if (action.equals("installSuccess")) {
-                    if(installingAppMap.containsKey(fileId)){
+                    if (installingAppMap.containsKey(fileId)) {
                         installingAppMap.remove(fileId);
                     }
                 } else if (action.equals("installFailed")) {
-                    if(installingAppMap.containsKey(fileId)){
+                    if (installingAppMap.containsKey(fileId)) {
                         installingAppMap.remove(fileId);
                     }
                 }

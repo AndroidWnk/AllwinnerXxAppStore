@@ -59,7 +59,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import cn.com.etrans.etsdk.manager.CANManager;
+import cn.com.etrans.etsdk.config.EtSDK;
 import cn.com.etrans.etsdk.utils.HardVersionInfoManager;
 
 public class DownloadService extends Service {
@@ -214,7 +214,7 @@ public class DownloadService extends Service {
 
                     break;
                 case 4://恢复网络
-                    if(application.isDoRecoverNet){
+                    if (application.isDoRecoverNet) {
                         getDownloaderInfoFromDB(true);
                         if (isAllWait()) {
                             startWaitTask();
@@ -304,19 +304,22 @@ public class DownloadService extends Service {
             UrlManager.HOST = "http://58.58.205.23:5152/api/v1/";
             UrlManager.DOWNLOADHOST = "http://58.58.205.23:5152/file/v1/";
         } else {//切换正式服务器
-
-            //            new Thread(){
-//                @Override
-//                public void run() {
-//                    super.run();
-//                    Constant.vin = CANManager.get(getApplicationContext()).getVehicleVINNumValue();//++android.jar增加部分
-//                }
-//            }.start();
-            Constant.vin = "LJU70W1Z7FG075386";//先写死一个测试用
-            Constant.deviceId = "2115010041574d4233520175bb4c408287";
-            Constant.supplierCode = "1440049";
+            try {
+                Constant.vin = EtSDK.getInstance(this).getCanManager().getVehicleVINNumValue();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            if (Constant.vin == "") {
+                Constant.vin = "LJU70W1Z7FG075386";//先写死一个测试用
+            }
             UrlManager.HOST = "http://vis.evcar.com:5151/v1/";
             UrlManager.DOWNLOADHOST = "http://vis.evcar.com:5151/v1/";
+
+
+            //新版
+//            Constant.vin = EtSDK.getInstance(this).getCanManager().getVehicleVINNumValue();
+//            UrlManager.HOST = "http://vis.evcar.com:5151/v1/";
+//            UrlManager.DOWNLOADHOST = "http://vis.evcar.com:5151/v1/";
 
             //旧版
 //            Constant.vin = CANManager.get(this).getVehicleVINNumValue();
@@ -336,7 +339,7 @@ public class DownloadService extends Service {
     private void getDeviceInfo() {
         Constant.deviceId = HardVersionInfoManager.GetHardSeralNum().replaceAll("\n", "");
         Constant.sysVersion = SystemProperties.get("ro.build.version");//.substring(Constant.sysVersion.indexOf("RV"));
-        Constant.sysModel = SystemProperties.get("ro.product.model").replaceAll(" ","");
+        Constant.sysModel = SystemProperties.get("ro.product.model").replaceAll(" ", "");
 //        Constant.sysVersion = "V174";//先写死一个测试用
 //        Constant.sysModel = "YC-DD2000-V7";
     }
@@ -833,7 +836,6 @@ public class DownloadService extends Service {
                                                     break;
                                                 }
                                             }
-
                                             JsonObject object = new JsonObject();
                                             object.addProperty("fileId", Integer.parseInt(fileId));
                                             object.addProperty("ID", Constant.deviceId);
@@ -953,10 +955,10 @@ public class DownloadService extends Service {
         new AsyncTask<Void, Void, String>() {
             @Override
             protected void onPostExecute(String result) {
-                if(result == null) {
-                    return ;
+                if (result == null) {
+                    return;
                 }
-                try{
+                try {
                     registerResultEntity = new Gson().fromJson(result,
                             RegisterResultEntity.class);
                     if (registerResultEntity != null) {
@@ -1039,7 +1041,7 @@ public class DownloadService extends Service {
                 object.addProperty("cmd", "5002");
                 object.addProperty("ID", Constant.deviceId);
                 object.addProperty("vin", Constant.vin);
-                object.addProperty("sysModel", Constant.sysModel.replaceAll(" ",""));
+                object.addProperty("sysModel", Constant.sysModel.replaceAll(" ", ""));
                 object.addProperty("sysVersion", Constant.sysVersion);//.substring(Constant.sysVersion.indexOf("RV")));
                 object.addProperty("updateTime", "");
                 object.addProperty("appName", "");
@@ -1091,7 +1093,7 @@ public class DownloadService extends Service {
                 mIntent = new Intent("installingApp");
                 mIntent.putExtra("fileId", appInfo.fileId);
                 sendBroadcast(mIntent);
-                int result = installAppSilence(Constant.appFilePath +appInfo.appName + ".apk");
+                int result = installAppSilence(Constant.appFilePath + appInfo.appName + ".apk");
                 return result;
             }
 
@@ -1126,14 +1128,14 @@ public class DownloadService extends Service {
                 if (appUpdateEntity != null) {
                     if (appUpdateEntity.state == 1) {
                         Log.d("check", "拿到升级列表了，是：" + result);
-                        if(!isNormal){
+                        if (!isNormal) {
                             for (AppListEntity.AppInfo appInfo : application.downloadList) {
 
-                                if(application.downLoaders.get(appInfo.fileId+"") == null){
-                                    DownLoader failDownLoader = new DownLoader(UrlManager.getDownloadUrl(), appInfo.fileId+"", Constant.appFilePath + appInfo.appName+"" + ".apk",
+                                if (application.downLoaders.get(appInfo.fileId + "") == null) {
+                                    DownLoader failDownLoader = new DownLoader(UrlManager.getDownloadUrl(), appInfo.fileId + "", Constant.appFilePath + appInfo.appName + "" + ".apk",
                                             1, DownloadService.this, mHandler, application);
                                     failDownLoader.state = -1;
-                                    application.downLoaders.put(appInfo.fileId+"",failDownLoader);
+                                    application.downLoaders.put(appInfo.fileId + "", failDownLoader);
                                 }
 
                             }
@@ -1161,7 +1163,7 @@ public class DownloadService extends Service {
                 object.addProperty("cmd", "5004");
                 object.addProperty("ID", Constant.deviceId);
                 object.addProperty("vin", Constant.vin);
-                object.addProperty("sysModel", Constant.sysModel.replaceAll(" ",""));
+                object.addProperty("sysModel", Constant.sysModel.replaceAll(" ", ""));
                 object.addProperty("sysVersion", Constant.sysVersion);//.substring(Constant.sysVersion.indexOf("RV")));
                 object.addProperty("updateTime", "");
                 object.addProperty("appId", ids);
@@ -1228,10 +1230,10 @@ public class DownloadService extends Service {
 
 
                 File localFile = new File(Constant.appFilePath + appInfo.appName + ".apk");
-                if(localFile.exists() && localFile.length() > 0 &&
+                if (localFile.exists() && localFile.length() > 0 &&
                         isFileComplete(localFile.getPath(),
                                 appInfo.md5)) {
-                    if(checkVersion(appInfo)) {
+                    if (checkVersion(appInfo)) {
                         localInstallAppSilence(appInfo);
                         appInfo.appState = 2;
                         continue;
