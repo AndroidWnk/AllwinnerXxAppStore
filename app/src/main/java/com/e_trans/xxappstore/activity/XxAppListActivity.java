@@ -195,6 +195,7 @@ public class XxAppListActivity extends XxBaseActivity implements View.OnClickLis
     }
 
     private void getRegisterData(Map<String, String> params) {
+        Log.i(TAG, "getRegisterData: params = "+params.toString());
         VolleyRequest.RequestPost(XxAppListActivity.this, UrlManager.getRegisterUrl(),
                 UrlManager.TAG, params, new VolleyInterface(XxAppListActivity.this,
                         VolleyInterface.mListener,
@@ -202,13 +203,14 @@ public class XxAppListActivity extends XxBaseActivity implements View.OnClickLis
                         VolleyInterface.RREQUESTS_STATE_SHOW_ONCE_DIALOG) {
                     @Override
                     public void onSuccessfullyListener(String result) { //
+                        Log.i(TAG, "onSuccessfullyListener: result = "+result);
                         registerResultEntity = new Gson().fromJson(result.toString(),
                                 RegisterResultEntity.class);
                         if (registerResultEntity != null) {
                             if (registerResultEntity.state == 1) {
                                 Constant.token = registerResultEntity.data.token;
                             } else if (registerResultEntity.state == 0) {
-                                Log.e(TAG, "errCode:" + registerResultEntity.err.errCode +
+                                Log.e(TAG, "errCode1:" + registerResultEntity.err.errCode +
                                         "====errMsg：" + registerResultEntity.err.errMsg);
                             }
                         }
@@ -266,7 +268,8 @@ public class XxAppListActivity extends XxBaseActivity implements View.OnClickLis
                             VolleyInterface.RREQUESTS_STATE_SHOW_ONCE_DIALOG) {
                         @Override
                         public void onSuccessfullyListener(String result) {
-                            Log.i(TAG,result);//{"data":{"totalPage":1,"pageNo":1,"pageSize":10,"totalCount":2,"list":[{"recommendLvl":5,"iconFileId":575,"issueTime":"2016-12-09 15:24:22","appName":"Opera","md5s":"aca44bf6038caae19e93d990332c3220","typeName":"软件","version":"12.2.0.11","isForced":1,"fileSize":3268632,"typeId":2,"id":52,"packName":"com.oupeng.mini.android","downNum":2716,"fileId":574,"md5":"21BC0665F616E6A9499327A97C8C6257"},{"recommendLvl":1,"iconFileId":2524,"issueTime":"2018-6-20 11:40:44","appName":"豆伴","md5s":"7b1478eb1c5e0e6bf8214a3a074bf2b9","typeName":"车载","version":"2.3.22","isForced":1,"fileSize":5186841,"typeId":1,"id":178,"packName":"com.xdy.douban","downNum":171,"fileId":2523,"md5":"AD0B72618E37450420DA4420C654CF95"}]},"state":1}
+                            //{"data":{"totalPage":1,"pageNo":1,"pageSize":10,"totalCount":2,"list":[{"recommendLvl":5,"iconFileId":575,"issueTime":"2016-12-09 15:24:22","appName":"Opera","md5s":"aca44bf6038caae19e93d990332c3220","typeName":"软件","version":"12.2.0.11","isForced":1,"fileSize":3268632,"typeId":2,"id":52,"packName":"com.oupeng.mini.android","downNum":2716,"fileId":574,"md5":"21BC0665F616E6A9499327A97C8C6257"},{"recommendLvl":1,"iconFileId":2524,"issueTime":"2018-6-20 11:40:44","appName":"豆伴","md5s":"7b1478eb1c5e0e6bf8214a3a074bf2b9","typeName":"车载","version":"2.3.22","isForced":1,"fileSize":5186841,"typeId":1,"id":178,"packName":"com.xdy.douban","downNum":171,"fileId":2523,"md5":"AD0B72618E37450420DA4420C654CF95"}]},"state":1}
+                            Log.i(TAG,result);
                             appListEntity = new Gson().fromJson(result.toString(),
                                     AppListEntity.class);
                             if (appListEntity != null) {
@@ -303,7 +306,7 @@ public class XxAppListActivity extends XxBaseActivity implements View.OnClickLis
                                     }
 
                                 } else if (appListEntity.state == 0) {
-                                    Log.e(TAG, "errCode:" + appListEntity.err.errCode +
+                                    Log.e(TAG, "errCode2:" + appListEntity.err.errCode +
                                             "====errMsg：" + appListEntity.err.errMsg);
                                     if (pagenumber == 1) {
                                         appRefreshView
@@ -389,7 +392,7 @@ public class XxAppListActivity extends XxBaseActivity implements View.OnClickLis
                                     }
 
                                 } else if (appListEntity.state == 0) {
-                                    Log.e(TAG, "errCode:" + appListEntity.err.errCode +
+                                    Log.e(TAG, "errCode3:" + appListEntity.err.errCode +
                                             "====errMsg：" + appListEntity.err.errMsg);
                                     if (pagenumber == 1) {
                                         appRefreshView
@@ -441,13 +444,13 @@ public class XxAppListActivity extends XxBaseActivity implements View.OnClickLis
     public void onRefresh(PullToRefreshLayout pullToRefreshLayout) {
         pagenumber = 1;
         list.clear();
-        getAppListData(false);
+        getAppListData(true);
     }
 
     @Override
     public void onLoadMore(PullToRefreshLayout pullToRefreshLayout) {
         pagenumber++;
-        getAppListData(false);
+        getAppListData(true);
     }
 
     private void bindService() {
@@ -715,8 +718,9 @@ public class XxAppListActivity extends XxBaseActivity implements View.OnClickLis
 
     @Override
     public void onBackPressed() {
-        if (!isLoading)
+        if (!isLoading){
             super.onBackPressed();
-        Log.e("onBackPressed", "----------onBackPressed--------");
+        }
+        Log.e("onBackPressed", "----------onBackPressed--------isLoading = "+isLoading);
     }
 }

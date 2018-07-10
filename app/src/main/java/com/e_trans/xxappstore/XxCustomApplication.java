@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Environment;
 import android.os.SystemProperties;
+import android.util.Log;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
@@ -37,7 +38,7 @@ import cn.com.etrans.etsdk.utils.HardVersionInfoManager;
  * Created by wk on 2016/3/31 0031.
  */
 public class XxCustomApplication extends Application {
-
+    private String TAG = "XxCustomApplication";
     public static RequestQueue mRequestQueues;
     public List<AppListEntity.AppInfo> downloadList = Collections.synchronizedList(new ArrayList<AppListEntity.AppInfo>());//正在下载的应用集合(保证线程安全)
     public List<AppListEntity.AppInfo> historyList = new ArrayList<AppListEntity.AppInfo>();//下载历史
@@ -77,9 +78,12 @@ public class XxCustomApplication extends Application {
         File markFile = new File(Environment.getExternalStorageDirectory().getPath() + "/mark.txt");
         if (markFile.exists()) {//切换到测试服务器
             Constant.vin = "LJU70W1Z7FG075386";//先写死一个测试用
+            Constant.sysModel = "YC-DD2000-V7";//先写死一个测试用
             UrlManager.HOST = "http://58.58.205.23:5152/api/v1/";
             UrlManager.DOWNLOADHOST = "http://58.58.205.23:5152/file/v1/";
+            Log.i(TAG, "onCreate: mark.txt存在");
         } else {//切换正式服务器
+            Log.i(TAG, "onCreate: mark.txt不存在");
 //            new Thread(){
 //                @Override
 //                public void run() {
@@ -106,9 +110,9 @@ public class XxCustomApplication extends Application {
                 e.printStackTrace();
             }
 
-            if(Constant.vin == ""){
-                Constant.vin = "LJU70W1Z7FG075386";//先写死一个测试用
-            }
+//            if (TextUtils.isEmpty(Constant.vin)) {
+//                Constant.vin = "LJU70W1Z7FG075386";//先写死一个测试用
+//            }
 //            Constant.deviceId = "2111010030313647373000da5e4fd75369";
 //            Constant.supplierCode = "1440049";
 //            Constant.sysVersion = "YC-ZD2S-HAV100-20180619-RV1.0.0update";
@@ -116,6 +120,14 @@ public class XxCustomApplication extends Application {
             Constant.sysModel = "YC-DD2000-V7";
             UrlManager.HOST = "http://vis.evcar.com:5151/v1/";
             UrlManager.DOWNLOADHOST = "http://vis.evcar.com:5151/v1/";
+//            UrlManager.HOST = "http://58.58.205.23:5152/api/v1/";
+//            UrlManager.DOWNLOADHOST = "http://58.58.205.23:5152/file/v1/";
+
+
+
+
+//            UrlManager.HOST = "http://vis.evcar.com:5111/v1/";
+//            UrlManager.DOWNLOADHOST = "http://vis.evcar.com:5111/v1/";
 
             //test2,用新设备，*********************************************************
 
