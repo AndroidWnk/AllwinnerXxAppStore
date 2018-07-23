@@ -28,7 +28,8 @@
             android:text="应用商店"
             android:textColor="@color/white"
             android:textSize="32sp"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            />
 
         <ImageView
             android:id="@+id/search"

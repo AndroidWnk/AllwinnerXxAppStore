@@ -63,7 +63,7 @@ public class XxCustomApplication extends Application {
         Constant.sysVersion = SystemProperties.get("ro.build.version");//.substring(SystemProperties.get("ro.build.version").indexOf("RV"));//YC-ZD2S-HAV100-20180619-RV1.0.0update
         Constant.sysModel = SystemProperties.get("ro.product.model").replaceAll(" ", "");//t3
 //        Constant.sysVersion = "V174";//先写死一个测试用
-//        Constant.sysModel = "YC-DD2000-V7";
+//        Constant.sysModel = "YC-DD2000-V7";//先写死一个测试用
         Constant.sdPath = Environment.getExternalStorageDirectory().getPath();
         Constant.appFilePath = Constant.sdPath + "/ZhongTai/ApkDownload/";
 
@@ -78,65 +78,19 @@ public class XxCustomApplication extends Application {
         File markFile = new File(Environment.getExternalStorageDirectory().getPath() + "/mark.txt");
         if (markFile.exists()) {//切换到测试服务器
             Constant.vin = "LJU70W1Z7FG075386";//先写死一个测试用
-            Constant.sysModel = "YC-DD2000-V7";//先写死一个测试用
             UrlManager.HOST = "http://58.58.205.23:5152/api/v1/";
             UrlManager.DOWNLOADHOST = "http://58.58.205.23:5152/file/v1/";
             Log.i(TAG, "onCreate: mark.txt存在");
         } else {//切换正式服务器
             Log.i(TAG, "onCreate: mark.txt不存在");
-//            new Thread(){
-//                @Override
-//                public void run() {
-//                    super.run();
-//                    Constant.vin = CANManager.get(XxCustomApplication.this).getVehicleVINNumValue();//++android.jar增加部分
-//                }
-//            }.start();
-            //test1*******************************************************8
-//            Constant.vin = "LJU70W1Z7FG075386";//先写死一个测试用
-//            Constant.deviceId = "2115010041574d4233520175bb4c408287";
-//            Constant.supplierCode = "1440049";
-//            Constant.sysVersion = "YC-ZD2S-HV100-20180320-RV2.0.95";
-//            Constant.sysModel = "YC-DD2000-V7";
-//            UrlManager.HOST = "http://vis.evcar.com:5151/v1/";
-//            UrlManager.DOWNLOADHOST = "http://vis.evcar.com:5151/v1/";
-            //test1*******************************************************8
-            //test2,用新设备，*********************************************************
-            //{"state":0,"err":{"errCode":"100","errMsg":"sysModel不合法"}}
-
 
             try {
                 Constant.vin = EtSDK.getInstance(this).getCanManager().getVehicleVINNumValue();
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
-//            if (TextUtils.isEmpty(Constant.vin)) {
-//                Constant.vin = "LJU70W1Z7FG075386";//先写死一个测试用
-//            }
-//            Constant.deviceId = "2111010030313647373000da5e4fd75369";
-//            Constant.supplierCode = "1440049";
-//            Constant.sysVersion = "YC-ZD2S-HAV100-20180619-RV1.0.0update";
-//            Constant.sysModel = "t3";//"sysModel不合法"
-            Constant.sysModel = "YC-DD2000-V7";
             UrlManager.HOST = "http://vis.evcar.com:5151/v1/";
             UrlManager.DOWNLOADHOST = "http://vis.evcar.com:5151/v1/";
-//            UrlManager.HOST = "http://58.58.205.23:5152/api/v1/";
-//            UrlManager.DOWNLOADHOST = "http://58.58.205.23:5152/file/v1/";
-
-
-
-
-//            UrlManager.HOST = "http://vis.evcar.com:5111/v1/";
-//            UrlManager.DOWNLOADHOST = "http://vis.evcar.com:5111/v1/";
-
-            //test2,用新设备，*********************************************************
-
-
-            //新版
-//            Constant.vin = EtSDK.getInstance(this).getCanManager().getVehicleVINNumValue();
-//            UrlManager.HOST = "http://vis.evcar.com:5151/v1/";
-//            UrlManager.DOWNLOADHOST = "http://vis.evcar.com:5151/v1/";
-
 
             //旧版
 //            Constant.vin = CANManager.get(this).getVehicleVINNumValue();

@@ -301,7 +301,6 @@ public class DownloadService extends Service {
         File markFile = new File(Environment.getExternalStorageDirectory().getPath() + "/mark.txt");
         if (markFile.exists()) { //切换到测试服务器
             Constant.vin = "LJU70W1Z7FG075386";//先写死一个测试用
-            Constant.sysModel = "YC-DD2000-V7";//先写死一个测试用
             UrlManager.HOST = "http://58.58.205.23:5152/api/v1/";
             UrlManager.DOWNLOADHOST = "http://58.58.205.23:5152/file/v1/";
             Log.i(TAG, "onCreate: mark.txt存在");
@@ -312,24 +311,12 @@ public class DownloadService extends Service {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-//            if (TextUtils.isEmpty(Constant.vin)) {
-//                Constant.vin = "LJU70W1Z7FG075386";//先写死一个测试用
-//            }
-            Constant.sysModel = "YC-DD2000-V7";
             UrlManager.HOST = "http://vis.evcar.com:5151/v1/";
             UrlManager.DOWNLOADHOST = "http://vis.evcar.com:5151/v1/";
-//            UrlManager.HOST = "http://58.58.205.23:5152/api/v1/";
-//            UrlManager.DOWNLOADHOST = "http://58.58.205.23:5152/file/v1/";
 
-
-//            UrlManager.HOST = "http://vis.evcar.com:5111/v1/";
-//            UrlManager.DOWNLOADHOST = "http://vis.evcar.com:5111/v1/";
-
-
-            //新版
-//            Constant.vin = EtSDK.getInstance(this).getCanManager().getVehicleVINNumValue();
-//            UrlManager.HOST = "http://vis.evcar.com:5151/v1/";
-//            UrlManager.DOWNLOADHOST = "http://vis.evcar.com:5151/v1/";
+            //test
+//        Constant.sysVersion = "V174";//先写死一个测试用
+//        Constant.sysModel = "YC-DD2000-V7";//先写死一个测试用
 
             //旧版
 //            Constant.vin = CANManager.get(this).getVehicleVINNumValue();
@@ -351,7 +338,7 @@ public class DownloadService extends Service {
         Constant.sysVersion = SystemProperties.get("ro.build.version");//.substring(Constant.sysVersion.indexOf("RV"));
         Constant.sysModel = SystemProperties.get("ro.product.model").replaceAll(" ", "");
 //        Constant.sysVersion = "V174";//先写死一个测试用
-        Constant.sysModel = "YC-DD2000-V7";//写死一个测试用
+//        Constant.sysModel = "YC-DD2000-V7";//写死一个测试用
     }
 
     /**
